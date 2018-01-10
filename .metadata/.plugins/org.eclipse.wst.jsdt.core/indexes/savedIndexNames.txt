@@ -1,0 +1,3 @@
+INDEX VERSION 1.3+E:\Chamithra\Office Stuff\Eclipse Workspaces\AngularTest\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+324736888.index
+1926139770.index

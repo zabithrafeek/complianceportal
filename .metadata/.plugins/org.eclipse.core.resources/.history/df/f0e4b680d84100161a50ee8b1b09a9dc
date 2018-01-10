@@ -1,0 +1,5 @@
+package com.angulartest.model;
+
+public class ApplicationContextProvider {
+
+}

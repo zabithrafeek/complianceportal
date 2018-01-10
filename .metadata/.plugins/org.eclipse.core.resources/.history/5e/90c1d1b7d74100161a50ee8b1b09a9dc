@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="ds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://LocalHost:3306/AngularTest" />
+		<property name="username" value="root" />
+		<property name="password" value="" />
+	</bean>
+
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="ds"></property>
+	</bean>
+	
+	<bean id="udao" class="com.panoceanic.model.UserDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="depdao" class="com.panoceanic.model.DepartmentDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="desdao" class="com.panoceanic.model.DesignationDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="chatdao" class="com.panoceanic.model.ChatDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="bsdao" class="com.panoceanic.model.BalanceSheetDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+
+	<bean id="plpdao" class="com.panoceanic.model.PlMonthlyDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="wrdao" class="com.panoceanic.model.WeeklyReportDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="tldao" class="com.panoceanic.model.TaskListDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="opdao" class="com.panoceanic.model.OperationFileDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="sidao" class="com.panoceanic.model.StationaryItemDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="sipdao" class="com.panoceanic.model.StationaryItemPurchaseDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="siudao" class="com.panoceanic.model.StationaryitemUsageDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="cldao" class="com.panoceanic.model.ChequeLeavesDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="ratiodao" class="com.panoceanic.model.RatioDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+
+	<bean id="chatodao" class="com.panoceanic.model.ChatOnlineDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="mvdao" class="com.panoceanic.model.ManualVariableDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="mvidao" class="com.panoceanic.model.ManualVariableInventoryDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<bean id="fcdao" class="com.panoceanic.model.FileCategoryDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	<!--//////////////////////////// Beginning (chamithra) ///////////////////////////////// -->
+	<bean id="workflowDao" class="com.panoceanic.model.WorkFlowDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+
+	<bean id="progressCommentDao" class="com.panoceanic.model.ProgressCommentDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+
+	<bean id="workflowUserDao" class="com.panoceanic.model.WorkflowUserDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+
+	<bean id="notificationDao" class="com.panoceanic.model.NotificationDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+
+	<bean id="budgetDao" class="com.panoceanic.model.BudgetDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+
+	<bean id="stationaryOrderingDao" class="com.panoceanic.model.StationaryOrderingDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="memoDao" class="com.panoceanic.model.MemoDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="ratioCommentDao" class="com.panoceanic.model.RatioCommentDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="ratioCommentWeeklyDao" class="com.panoceanic.model.RatioCommentWeeklyDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="monthlyFileDao" class="com.panoceanic.model.MonthlyFileDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="branchDao" class="com.panoceanic.model.BranchDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="jobTypeDao" class="com.panoceanic.model.JobTypeDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="pobInvoiceTrackerDao" class="com.panoceanic.model.PobInvoiceTrackerDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="pobShippingTrackerDao" class="com.panoceanic.model.PobShippingTrackerDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="leaveDao" class="com.panoceanic.model.LeaveDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="attendanceDao" class="com.panoceanic.model.AttendanceDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="payrollDao" class="com.panoceanic.model.PayrollDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="performanceDao" class="com.panoceanic.model.PerformanceDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="consecutiveLeaveDao" class="com.panoceanic.model.ConsecutiveLeaveDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="forumTopicDao" class="com.panoceanic.model.ForumTopicDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="forumCommentDao" class="com.panoceanic.model.ForumCommentDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="taskCommentDao" class="com.panoceanic.model.TaskCommentDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="dBBackupDao" class="com.panoceanic.model.DBBackupDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="creditClientDao" class="com.panoceanic.model.CreditClientDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="creditApplicationDao" class="com.panoceanic.model.CreditApplicationDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="productTopicDao" class="com.panoceanic.model.ProductTopicDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<bean id="productCommentDao" class="com.panoceanic.model.ProductCommentDao">
+		<property name="jdbcTemplate" ref="jdbcTemplate"></property>
+	</bean>
+	
+	<!--End //////////////////////////// (chamithra) /////////////////////////////////////// -->
+	<bean id="properties" class="com.panoceanic.model.Properties">
+		<property name="adminemail" value="noreply@panoceanic.org" />
+	</bean>
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="mail.panoceanic.org" />
+		<property name="username" value="noreply@panoceanic.org" />
+		<property name="password" value="vOdXH1mE#ey0" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.socketFactory.port">465</prop>
+				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.smtp.port">465</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="mailMail" class="com.panoceanic.model.MailMail">
+		<property name="mailSender" ref="mailSender" />
+	</bean>
+	<bean id="applicationContextProvder" class="com.panoceanic.model.ApplicationContextProvider" />
+</beans>  
